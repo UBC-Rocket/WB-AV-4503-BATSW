@@ -1,0 +1,30 @@
+PCAD Importer Log
+Project : 5747846-4.LibPkg
+
+Section : C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\Libraries\5747846-4\5747846-4.lia
+    Section : PCB Library - 5747846-4.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token 5747846-4 On Line 189
+            Warning - 1 : Skipping Token attachedSymbol On Line 489
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - 5747846-4.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token padStyleDef On Line 33
+            Warning - 1 : Skipping Token multiLayer On Line 108
+            Warning - 1 : Skipping Token layerContents On Line 137
+            Warning - 1 : Skipping Token layerContents On Line 149
+            Warning - 1 : Skipping Token layerContents On Line 159
+            Warning - 1 : Skipping Token layerContents On Line 173
+        EndSection
+
+        Section : Generating SCH Library - 5747846-4.SchLib
+        EndSection
+    EndSection
+EndSection

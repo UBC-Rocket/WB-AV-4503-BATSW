@@ -1,0 +1,6 @@
+Added Component: Designator=J?(*TE_5747846-4)
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/5747846-4/TE%20Connectivity%20AMP%20Connectors/view-part/2759124/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Redundant Batteries Member=Component J? 5747846-4
+Added Member To Class: ClassName=Redundant Batteries Member=Component P? 3-338168-2
+Added Member To Class: ClassName=Redundant Batteries Member=Component P? 3-338168-2

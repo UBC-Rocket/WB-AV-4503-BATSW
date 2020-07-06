@@ -1,0 +1,9 @@
+Change Physical Footprint: Designator=D1 Old Footprint=DIODE_DO-214AC New Footprint=DIODE_DO-214AC
+Change Physical Footprint: Designator=D2 Old Footprint=DIODE_DO-214AC New Footprint=DIODE_DO-214AC
+Change Physical Footprint: Designator=J? Old Footprint=*TE_5747846-4 New Footprint=*TE_5747846-4
+Change Physical Footprint: Designator=Q1 Old Footprint=FDMS86101A New Footprint=FDMS86101A
+Change Physical Footprint: Designator=Q2 Old Footprint=FDMS86101A New Footprint=FDMS86101A
+Change Physical Footprint: Designator=R1 Old Footprint=STA_RMCF2512 New Footprint=STA_RMCF2512
+Change Physical Footprint: Designator=R2 Old Footprint=STA_RMCF2512 New Footprint=STA_RMCF2512
+Change Physical Footprint: Designator=U1 Old Footprint=MSOP-8_MS New Footprint=MSOP-8_MS
+Change Physical Footprint: Designator=U2 Old Footprint=MSOP-8_MS New Footprint=MSOP-8_MS

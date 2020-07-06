@@ -1,0 +1,376 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2020-03-07</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4:07:46 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc" class="file"><acronym title="C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc">C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">12</td></tr>
+</table>
+</td>
+</table><a name="IDXHQ5VHFNRA5HLWY1KOW3BCRG0M3T1ZWRIUXM1ZEP3B2WL2RG5WUB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMXIXCDENVIBVKJPT2E5H2ZAMVEJZ232EH5MVEXPOQM0HTIYLUCSD">Clearance Constraint (Gap=0.152mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5OWBTBYZG5DIOIYJZHCEUYPUCTKDL2ZDOJD3DDYGTCNFMJC4SZL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIHVLQLN2ZISOJDCSYMU5FRXERNMZXC0RHHPTKSKZJXGPAT1P0Q4G">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSMMRNH3IBSSFGIITUXVYJX0ZGINF51O04TSTKZIJW2ZCFY142IGP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPYOPDTHIPZ4XJHCGH5DMIFDKZMTHAIQN0FUKDIB3ELCR3DTLFG2G">Width Constraint (Min=0.254mm) (Max=5.08mm) (Preferred=0.305mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4ELQG0V52R3YKYB04SXVWKSNWPKKBTPWECB41WHVQ3PSMR2FOPQH">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ1FKWQ4FA0R0PO2TUKVL3IWSCI4D3ES4HT4QHBCAHCT4M0PRNQOI">Hole Size Constraint (Min=0.025mm) (Max=25.4mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPMFWBEMNVCDULLJ4F3CZNFRODN04HPL05S22WDLHM21CY3FUDIP">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT0HWYTZIT5Y0MSLUU5ESDPFZBJTDU5F4SJGMQSIU4VRSOC1EPBUM">Minimum Solder Mask Sliver (Gap=0.025mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDER314VT5FLSHPXCAD0H5FLTXQIWW2PWICTYR4AK0V1EY3CJZKICN">Silk To Solder Mask (Clearance=0.025mm) (IsPad),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDL1ZKOUZHCMPGHCZ21AERXPMCGMNAV1OL03TIOPEQ1ZPNVMJBCAGI">Silk to Silk (Clearance=0.025mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4HINWP5A50F21KYAFC3U412OJRL0QM34HUHGJPAZOR4C4AUKHOH">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOOXOKUUNBDJLCOGTTEHG0YIS3GQL2VG3HQJO5COXREILPNKLSPQG">Room Redundant Batteries (Bounding Region = (47.647mm, 45.513mm, 111.693mm, 121.462mm) (InComponentClass('Redundant Batteries'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSJXRCBA5LOJ1C51KXN4QH4TDPOIXI4ETTV3C1OPVO0LVZ2L4HW3E">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">12</td>
+</tr>
+</table><br><a name="IDIHVLQLN2ZISOJDCSYMU5FRXERNMZXC0RHHPTKSKZJXGPAT1P0Q4G"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.433mil|Location2.X=3182.482mil|Location1.Y=3603.602mil|Location2.Y=3923.541mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2777.433mil|Location2.X=3182.482mil|Location1.Y=3603.602mil|Location2.Y=3923.541mil|Absolute=True">Un-Routed Net Constraint: Net NetC1_1 Between Track (21.144mm,40.444mm)(22.021mm,40.444mm) on Top Layer And Pad U1-6(27.229mm,43.49mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2785.868mil|Location2.X=3195.421mil|Location1.Y=2659.927mil|Location2.Y=2960.132mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2785.868mil|Location2.X=3195.421mil|Location1.Y=2659.927mil|Location2.Y=2960.132mil|Absolute=True">Un-Routed Net Constraint: Net NetC2_1 Between Track (22.235mm,16.474mm)(22.707mm,16.002mm) on Top Layer And Pad U2-6(27.557mm,19.019mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDER314VT5FLSHPXCAD0H5FLTXQIWW2PWICTYR4AK0V1EY3CJZKICN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.025mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2759.64mil|Location2.X=2761.307mil|Location1.Y=3880.889mil|Location2.Y=3882.556mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2759.64mil|Location2.X=2761.307mil|Location1.Y=3880.889mil|Location2.Y=3882.556mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad D1-2(19.76mm,44.705mm) on Top Layer And Text "U1" (18.415mm,44.968mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.794mil|Location2.X=3747.044mil|Location1.Y=2785.52mil|Location2.Y=2787.77mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3744.794mil|Location2.X=3747.044mil|Location1.Y=2785.52mil|Location2.Y=2787.77mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.025mm) Between Pad J?-12(43.288mm,17.2mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.48mil|Location2.X=3807.147mil|Location1.Y=3906.536mil|Location2.Y=3908.203mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.48mil|Location2.X=3807.147mil|Location1.Y=3906.536mil|Location2.Y=3908.203mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad J?-14(46.132mm,46.18mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.456mil|Location2.X=3807.122mil|Location1.Y=3806.569mil|Location2.Y=3808.235mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.456mil|Location2.X=3807.122mil|Location1.Y=3806.569mil|Location2.Y=3808.235mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad J?-15(46.132mm,43.42mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3820.338mil|Location2.X=3822.004mil|Location1.Y=3681.611mil|Location2.Y=3683.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3820.338mil|Location2.X=3822.004mil|Location1.Y=3681.611mil|Location2.Y=3683.277mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad J?-16(46.132mm,40.66mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.517mil|Location2.X=3807.183mil|Location1.Y=2818.977mil|Location2.Y=2820.644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3805.517mil|Location2.X=3807.183mil|Location1.Y=2818.977mil|Location2.Y=2820.644mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad J?-24(46.132mm,18.58mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3802.538mil|Location2.X=3810.958mil|Location1.Y=2753.498mil|Location2.Y=2758.848mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3802.538mil|Location2.X=3810.958mil|Location1.Y=2753.498mil|Location2.Y=2758.848mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.003mm &lt; 0.025mm) Between Pad J?-25(46.132mm,15.82mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.003mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.648mil|Location2.X=1991.315mil|Location1.Y=4125.503mil|Location2.Y=4127.17mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1989.648mil|Location2.X=1991.315mil|Location1.Y=4125.503mil|Location2.Y=4127.17mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.025mm) Between Pad J1-1(3.683mm,48.133mm) on Top Layer And Text "Bat 1" (-0.508mm,51.181mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDL1ZKOUZHCMPGHCZ21AERXPMCGMNAV1OL03TIOPEQ1ZPNVMJBCAGI"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.025mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2888.487mil|Location2.X=2890.153mil|Location1.Y=3924.204mil|Location2.Y=3925.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2888.487mil|Location2.X=2890.153mil|Location1.Y=3924.204mil|Location2.Y=3925.871mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.025mm) Between Text "*" (22.238mm,45.095mm) on Top Overlay And Track (21.794mm,46.068mm)(23.154mm,46.068mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2898.088mil|Location2.X=2899.755mil|Location1.Y=2964.838mil|Location2.Y=2966.505mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2898.088mil|Location2.X=2899.755mil|Location1.Y=2964.838mil|Location2.Y=2966.505mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.025mm) Between Text "*" (22.566mm,20.624mm) on Top Overlay And Track (22.072mm,21.78mm)(23.432mm,21.78mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

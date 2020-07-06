@@ -1,0 +1,63 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Pablo Fernandez\Documents\UBC Rocket\WB\4503-WB-AV-SW\WB-AV-4503-Switching-Circuit-REV-0.pcbdoc
+Date     : 2020-03-07
+Time     : 4:07:46 PM
+
+Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net NetC1_1 Between Track (21.144mm,40.444mm)(22.021mm,40.444mm) on Top Layer And Pad U1-6(27.229mm,43.49mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC2_1 Between Track (22.235mm,16.474mm)(22.707mm,16.002mm) on Top Layer And Pad U2-6(27.557mm,19.019mm) on Top Layer 
+Rule Violations :2
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=5.08mm) (Preferred=0.305mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=25.4mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.025mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.025mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad D1-2(19.76mm,44.705mm) on Top Layer And Text "U1" (18.415mm,44.968mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.025mm < 0.025mm) Between Pad J?-12(43.288mm,17.2mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.025mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad J?-14(46.132mm,46.18mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad J?-15(46.132mm,43.42mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad J?-16(46.132mm,40.66mm) on Multi-Layer And Text "Bat Out" (46.132mm,39.779mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad J?-24(46.132mm,18.58mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.003mm < 0.025mm) Between Pad J?-25(46.132mm,15.82mm) on Multi-Layer And Text "Bat Out" (45.743mm,10.614mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.003mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.025mm) Between Pad J1-1(3.683mm,48.133mm) on Top Layer And Text "Bat 1" (-0.508mm,51.181mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :8
+
+Processing Rule : Silk to Silk (Clearance=0.025mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.025mm) Between Text "*" (22.238mm,45.095mm) on Top Overlay And Track (21.794mm,46.068mm)(23.154mm,46.068mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.025mm) Between Text "*" (22.566mm,20.624mm) on Top Overlay And Track (22.072mm,21.78mm)(23.432mm,21.78mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+Rule Violations :2
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Room Redundant Batteries (Bounding Region = (47.647mm, 45.513mm, 111.693mm, 121.462mm) (InComponentClass('Redundant Batteries'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 12
+Waived Violations : 0
+Time Elapsed        : 00:00:01
